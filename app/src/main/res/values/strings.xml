@@ -1,4 +1,8 @@
 <resources>
+
     <string name="app_name">Satisfy Hunger</string>
+    <string name="posicao1">Digite sua posição</string>
+    <string name="exemploposicao"> Ex: -23.557704,-46.615033</string>
+    <string name="pesquisa">Pesquisar</string>
     <string name="Teste_Commit_06">Teste Commit 06</string>
 </resources>
