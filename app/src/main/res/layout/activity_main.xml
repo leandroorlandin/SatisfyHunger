@@ -23,9 +23,26 @@
         android:inputType="textEmailAddress"
         android:hint="E-mail"/>
 
+    <EditText
+        android:id="@+id/editLocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Local"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Telefone"
+        android:inputType="textEmailAddress" />
+
     <ListView
         android:id="@+id/list_vDados"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="visible" />
 </LinearLayout>
 

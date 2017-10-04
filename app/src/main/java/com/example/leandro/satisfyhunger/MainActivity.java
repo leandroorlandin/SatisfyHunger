@@ -22,7 +22,7 @@ import model.Vendedor;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editNome , editEmail;
+    EditText editNome , editEmail, editLocal, editTelefone;
     ListView list_vDados;
 
     Button btPesquisar;
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         editNome = (EditText)findViewById(R.id.editNome);
         editEmail= (EditText)findViewById(R.id.editEmail);
+        editLocal = (EditText)findViewById(R.id.editLocal);
+        editTelefone= (EditText)findViewById(R.id.editTelefone);
         list_vDados = (ListView) findViewById(R.id.list_vDados);
         inicializarFirebase();
 
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             vendedor.setId(UUID.randomUUID().toString());
             vendedor.setNome(editNome.getText().toString());
             vendedor.setEmail(editEmail.getText().toString());
+            vendedor.setLocal(editLocal.getText().toString());
+            vendedor.setTelefone(editTelefone.getText().toString());
             databaseReference.child("Vendedor").child(vendedor.getId()).setValue(vendedor);
             limparCampos();
             
@@ -73,5 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private void limparCampos() {
         editNome.setText("");
         editEmail.setText("");
+        editLocal.setText("");
+        editTelefone.setText("");
     }
 }
