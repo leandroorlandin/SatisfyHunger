@@ -31,3 +31,5 @@ dependencies {
     compile 'com.google.firebase:firebase-database:11.0.4'
     testCompile 'junit:junit:4.12'
 }
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'
