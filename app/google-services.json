@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "363053823513",
+    "firebase_url": "https://satisfyhunters.firebaseio.com",
+    "project_id": "satisfyhunters",
+    "storage_bucket": "satisfyhunters.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363053823513:android:d0f2eb8309835f23",
+        "android_client_info": {
+          "package_name": "com.example.leandro.satisfyhunger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363053823513-6hoj3s01trc4d48nnug586uit1mqfbd9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.leandro.satisfyhunger",
+            "certificate_hash": "6b2a83103b633c1ce6f9718e1087a4fb37e9e020"
+          }
+        },
+        {
+          "client_id": "363053823513-fe3t0uuq4j0el7doqcsc3nqm07vo6m92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4ULjcP23GKujS3ofXjU7z_3D7csU2e0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363053823513-fe3t0uuq4j0el7doqcsc3nqm07vo6m92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
