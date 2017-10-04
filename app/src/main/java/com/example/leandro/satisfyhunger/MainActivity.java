@@ -1,48 +1,77 @@
 package com.example.leandro.satisfyhunger;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
+import model.Vendedor;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edposicao;
+    EditText editNome , editEmail;
+    ListView list_vDados;
+
     Button btPesquisar;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        edposicao = (EditText) findViewById(R.id.edposicao);
-        btPesquisar = (Button) findViewById(R.id.btPesquisar);
 
-        btPesquisar.setOnClickListener(new View.OnClickListener() {
+        editNome = (EditText)findViewById(R.id.editNome);
+        editEmail= (EditText)findViewById(R.id.editEmail);
+        list_vDados = (ListView) findViewById(R.id.list_vDados);
+        inicializarFirebase();
 
-            @Override
-            public void onClick(View arg0) {
+    }
+     private void inicializarFirebase(){
+         FirebaseApp.initializeApp(this);
+         firebaseDatabase = FirebaseDatabase.getInstance();
+         databaseReference = firebaseDatabase.getReference();
+     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
 
+        return super.onCreateOptionsMenu(menu);
+    }
 
-                AlertDialog.Builder dialogo = new
-                        AlertDialog.Builder(MainActivity.this);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_novo){
+            Vendedor vendedor = new Vendedor();
+            vendedor.setId(UUID.randomUUID().toString());
+            vendedor.setNome(editNome.getText().toString());
+            vendedor.setEmail(editEmail.getText().toString());
+            databaseReference.child("Vendedor").child(vendedor.getId()).setValue(vendedor);
+            limparCampos();
+            
+        }
 
-                dialogo.setTitle("Pesquisa foi Realizada");
+        return true;
+    }
 
-                dialogo.setMessage("Resultado na tabela");
-
-                dialogo.setNeutralButton("OK", null);
-
-                dialogo.show();
-
-            }
-        });
-
-
-
+    private void limparCampos() {
+        editNome.setText("");
+        editEmail.setText("");
     }
 }
