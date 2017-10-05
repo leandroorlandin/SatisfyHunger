@@ -9,6 +9,8 @@ public class Pessoa {
     private String nome;
     private String telefone;
     private String email;
+    private int tipo;
+    private int status;
 
     public Pessoa() {
     }
@@ -43,6 +45,22 @@ public class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override

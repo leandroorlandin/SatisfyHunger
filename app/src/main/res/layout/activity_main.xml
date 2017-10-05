@@ -28,16 +28,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Local"
-        android:inputType="textEmailAddress" />
+        android:hint="Local" />
 
     <EditText
         android:id="@+id/editTelefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Telefone"
-        android:inputType="textEmailAddress" />
+        android:hint="Telefone" />
+
+    <EditText
+        android:id="@+id/editProduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Produto" />
+
+    <EditText
+        android:id="@+id/editDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Descrição do Produto"/>
 
     <ListView
         android:id="@+id/list_vDados"

@@ -1,13 +1,10 @@
 package com.example.leandro.satisfyhunger;
 
-import android.app.AlertDialog;
-import android.content.ClipData;
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -22,10 +19,8 @@ import model.Vendedor;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editNome , editEmail, editLocal, editTelefone;
+    EditText editNome , editEmail, editLocal, editTelefone, editProduto, editDescricao;
     ListView list_vDados;
-
-    Button btPesquisar;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -36,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editNome = (EditText)findViewById(R.id.editNome);
-        editEmail= (EditText)findViewById(R.id.editEmail);
+        editEmail = (EditText)findViewById(R.id.editEmail);
         editLocal = (EditText)findViewById(R.id.editLocal);
-        editTelefone= (EditText)findViewById(R.id.editTelefone);
+        editTelefone = (EditText)findViewById(R.id.editTelefone);
+        editProduto = (EditText)findViewById(R.id.editProduto);
+        editDescricao  = (EditText)findViewById(R.id.editDescricao);
         list_vDados = (ListView) findViewById(R.id.list_vDados);
         inicializarFirebase();
 
@@ -66,9 +63,21 @@ public class MainActivity extends AppCompatActivity {
             vendedor.setEmail(editEmail.getText().toString());
             vendedor.setLocal(editLocal.getText().toString());
             vendedor.setTelefone(editTelefone.getText().toString());
+            vendedor.setProduto(editProduto.getText().toString());
+            vendedor.setDescricao(editDescricao.getText().toString());
+            vendedor.setTipo(1);
+            vendedor.setStatus(1);
             databaseReference.child("Vendedor").child(vendedor.getId()).setValue(vendedor);
             limparCampos();
             
+        }else if(id == R.id.menu_altera){
+
+        }else if(id == R.id.menu_deleta) {
+
+
+        }else if(id == R.id.menu_buscar){
+            Intent i = new Intent(MainActivity.this,Pesquisa.class);
+            startActivity(i);
         }
 
         return true;
@@ -79,5 +88,7 @@ public class MainActivity extends AppCompatActivity {
         editEmail.setText("");
         editLocal.setText("");
         editTelefone.setText("");
+        editProduto.setText("");
+        editDescricao.setText("");
     }
 }
