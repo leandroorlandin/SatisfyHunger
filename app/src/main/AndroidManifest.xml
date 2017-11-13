@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pesquisa"></activity>
+        <activity android:name=".Pesquisa" />
+        <activity android:name=".CadastroClienteActivity" />
+        <activity android:name=".CadastroVendedorActivity"></activity>
     </application>
 
 </manifest>
