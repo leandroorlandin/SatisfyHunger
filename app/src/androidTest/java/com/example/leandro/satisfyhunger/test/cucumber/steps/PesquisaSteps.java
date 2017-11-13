@@ -1,4 +1,4 @@
-package com.example.leandro.satisfyhunger.cucumber.steps;
+package com.example.leandro.satisfyhunger.test.cucumber.steps;
 
 import android.test.ActivityInstrumentationTestCase2;
 
@@ -12,6 +12,7 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
@@ -33,12 +34,8 @@ public class PesquisaSteps extends ActivityInstrumentationTestCase2<Pesquisa> {
 
     @Dado("a tela de pesquisa esta ativa")
     public void tela_pesquisa_ativa(){
-
-    }
-
-    @E("apertar enter")
-    public void apertar_enter(){
-        // funcao  espresso de apertar Enter
+        assertNotNull(getActivity());
+        onView(withId(R.id.menu_buscar)).perform(click());
     }
 
     @Entao("serao exibidos resultados")

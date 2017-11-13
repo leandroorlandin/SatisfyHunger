@@ -1,4 +1,4 @@
-package com.example.leandro.satisfyhunger;
+package com.example.leandro.satisfyhunger.test;
 
 import android.os.Bundle;
 import android.support.test.runner.MonitoringInstrumentation;

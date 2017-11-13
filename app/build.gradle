@@ -10,8 +10,8 @@ android {
         versionCode 1
         versionName "1.0"
         //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        testApplicationId "com.example.leandro.satisfyhunger"
-        testInstrumentationRunner "com.example.leandro.satisfyhunger.Instrumentation"
+        testApplicationId "com.example.leandro.satisfyhunger.test"
+        testInstrumentationRunner "com.example.leandro.satisfyhunger.test.Instrumentation"
     }
     buildTypes {
         release {
