@@ -7,54 +7,25 @@
     android:orientation="vertical"
     tools:context="com.example.leandro.satisfyhunger.MainActivity">
 
-    <EditText
-        android:id="@+id/editNome"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        app:srcCompat="@mipmap/ic_logo" />
+
+    <Button
+        android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Nome"/>
+        android:text="Login" />
 
-    <EditText
-        android:id="@+id/editEmail"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="E-mail"/>
+        android:layout_gravity="center"
+        android:text="Cadastre-se" />
 
-    <EditText
-        android:id="@+id/editLocal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Local" />
 
-    <EditText
-        android:id="@+id/editTelefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Telefone" />
-
-    <EditText
-        android:id="@+id/editProduto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Produto" />
-
-    <EditText
-        android:id="@+id/editDescricao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Descrição do Produto"/>
-
-    <ListView
-        android:id="@+id/list_vDados"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible" />
 </LinearLayout>
 
