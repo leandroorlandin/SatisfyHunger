@@ -16,24 +16,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pesquisa" />
-        <activity android:name=".CadastroClienteActivity" />
-        <activity android:name=".CadastroVendedorActivity" />
-        <activity android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
 
-        <activity android:name=".MainActivity"
+        <!-- MainActivity código para definir tela Principal iniciada -->
+        <activity
+            android:name=".MainActivity"
             android:label="Bem vindo ao Satisfy Hunger">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-             />
-
         </activity>
-    </application>
 
+        <!-- Demais telas da aplicação -->
+        <activity android:name=".Pesquisa" />
+        <activity android:name=".CadastroClienteActivity" />
+        <activity android:name=".CadastroVendedorActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".CadastroPessoaActivity"
+            android:label="Cadastre-se" />
+        />
+    </application>
 
 </manifest>

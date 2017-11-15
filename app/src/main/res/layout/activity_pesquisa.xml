@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Informe o termo a ser buscado" />
+        android:hint="Informe onde você esta" />
 
     <ListView
         android:id="@+id/list_vPesquisa"

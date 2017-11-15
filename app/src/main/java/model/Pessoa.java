@@ -9,6 +9,7 @@ public class Pessoa {
     private String nome;
     private String telefone;
     private String email;
+    private String senha;
     private int tipo;
     private int status;
 
@@ -62,6 +63,10 @@ public class Pessoa {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    public String getSenha() { return senha; }
+
+    public void setSenha(String senha) { this.senha = senha; }
 
     @Override
     public String toString() {
