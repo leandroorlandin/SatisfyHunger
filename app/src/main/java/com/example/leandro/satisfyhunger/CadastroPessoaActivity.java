@@ -5,14 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
 
-import com.google.firebase.FirebaseApp;
+import com.google.firebase.*;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 import model.Pessoa;
@@ -51,37 +55,62 @@ public class CadastroPessoaActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.menu_novo){
+        if (id == R.id.menu_novo) {
             // testa se os campos estão preenchidos e se o email já existe na base
-            if (    editNome.getText().toString().isEmpty()      ||
-                    editEmail.getText().toString().isEmpty()     ||
-                    editTelefone.getText().toString().isEmpty()  ||
-                    editSenha.getText().toString().isEmpty()    &&
-                    pesquisaEmail(editEmail.getText().toString()) == false)
-            {
+            if (pesquisaEmail(editEmail.getText().toString()) == false) {
+                if (
+                        editNome.getText().toString().isEmpty() ||
+                                editEmail.getText().toString().isEmpty() ||
+                                editTelefone.getText().toString().isEmpty() ||
+                                editSenha.getText().toString().isEmpty()
+                        ) {
 
 
-            }else {
-                Pessoa pessoa = new Pessoa();
-                pessoa.setId(UUID.randomUUID().toString());
-                pessoa.setNome(editNome.getText().toString());
-                pessoa.setEmail(editEmail.getText().toString());
-                pessoa.setTelefone(editTelefone.getText().toString());
-                //adicionar criptografia
-                pessoa.setSenha(editSenha.getText().toString());
-                pessoa.setTipo(1);
-                pessoa.setStatus(1);
-                databaseReference.child("Pessoa").child(pessoa.getId()).setValue(pessoa);
-                limparCampos();
-            }
+                } else {
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.setId(UUID.randomUUID().toString());
+                    pessoa.setNome(editNome.getText().toString());
+                    pessoa.setEmail(editEmail.getText().toString());
+                    pessoa.setTelefone(editTelefone.getText().toString());
+                    //adicionar criptografia
+                    try {
+                    String senha = editSenha.getText().toString();
 
-        }else if(id == R.id.home){
+                    MessageDigest algorithm = null;
+
+                        algorithm = MessageDigest.getInstance("SHA-1");
+
+
+                    algorithm.update( senha.getBytes() );
+                    byte[] hash = algorithm.digest();
+                    StringBuffer hexString = new StringBuffer();
+                    for (int i = 0; i < hash.length; i++) {
+                        if ((0xff & hash[i]) < 0x10)
+                            hexString.append( "0" + Integer.toHexString((0xFF & hash[i])));
+                        else
+                            hexString.append(Integer.toHexString(0xFF & hash[i]));
+                    }
+                    String criptografado = hexString.toString();
+
+                    pessoa.setSenha(criptografado);
+                    pessoa.setTipo(1);
+                    pessoa.setStatus(1);
+                    databaseReference.child("Pessoa").child(pessoa.getId()).setValue(pessoa);
+                    limparCampos();
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            } else if (id == R.id.home) {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
 
-        }
+            }
 
+        }
         return true;
+
     }
 
     private void limparCampos() {
@@ -91,7 +120,25 @@ public class CadastroPessoaActivity extends AppCompatActivity {
         editSenha.setText("");
     }
     private boolean pesquisaEmail(String email){
-        //pesquisa na base se email já existe
-        return false;
+        Query query;
+            query = databaseReference.child("Pessoa").orderByChild("email").equalTo(email);
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                 String value = dataSnapshot.getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+            if(query == null) {
+
+            return false;
+        }else{
+            return false;
+        }
     }
 }
