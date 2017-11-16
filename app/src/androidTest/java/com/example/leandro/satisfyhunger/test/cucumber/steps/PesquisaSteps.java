@@ -32,11 +32,12 @@ public class PesquisaSteps extends ActivityInstrumentationTestCase2<Pesquisa> {
         onView(withId(R.id.editPalavra)).perform(typeText(palavra));
     }
 
-    @Dado("a tela de pesquisa esta ativa")
-    public void tela_pesquisa_ativa(){
+      @Dado("a tela de pesquisa esta ativa")
+     public void tela_pesquisa_ativa(){
         assertNotNull(getActivity());
-        onView(withId(R.id.menu_buscar)).perform(click());
-    }
+         // onView(withId(R.id.menu_buscar)).perform(click());
+
+      }
 
     @Entao("serao exibidos resultados")
     public void exibicao_resultados(){
