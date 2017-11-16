@@ -1,10 +1,12 @@
 package com.example.leandro.satisfyhunger;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -34,7 +36,7 @@ public class Pesquisa extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.menu_pesquisa,menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -98,7 +100,7 @@ public class Pesquisa extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
                     Vendedor vendedor = objSnapshot.getValue(Vendedor.class);
-                    vendedorList.add(vendedor);
+                        vendedorList.add(vendedor);
                 }
                 vendedorArrayAdapter = new ArrayAdapter<Vendedor>(Pesquisa.this,
                         android.R.layout.simple_list_item_1, vendedorList);
@@ -116,5 +118,13 @@ public class Pesquisa extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         pesquisaPalavra("");
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.home) {
+            Intent intent = new Intent(this, InicialActivity.class);
+            startActivity(intent);
+        }
+        return true;
     }
 }

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    tools:context="com.example.leandro.satisfyhunger.MainActivity">
+    tools:context="com.example.leandro.satisfyhunger.InicialActivity">
 
 
     <ImageView
@@ -19,19 +19,19 @@
         android:contentDescription="@string/logo" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnVendedor"
         android:layout_width="373dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="@string/login"
-        android:onClick="MkLogin"/>
+        android:text="Cadastrar Produtos"
+        android:onClick="MkCadastroVendedor"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnCliente"
+        android:layout_width="373dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Cadastre-se"
-        android:onClick="MkCadastro"/>
+        android:text="Buscar Vendedores"
+        android:onClick="MkPesquisa"/>
 
 </LinearLayout>

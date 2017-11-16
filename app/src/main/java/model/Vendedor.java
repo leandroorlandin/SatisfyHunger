@@ -35,4 +35,10 @@ public class Vendedor extends Pessoa {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + "\n" + "Produto: " + produto + "\n" +  "Local: " + getLocal()
+                + "\n" +   "Telefone: " + getTelefone();
+    }
 }

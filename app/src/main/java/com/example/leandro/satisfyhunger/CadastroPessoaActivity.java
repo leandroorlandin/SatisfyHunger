@@ -20,7 +20,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 import model.Pessoa;
-import model.Vendedor;
 
 public class CadastroPessoaActivity extends AppCompatActivity {
     EditText editNome , editEmail, editTelefone, editSenha;
@@ -57,7 +56,7 @@ public class CadastroPessoaActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.menu_novo) {
             // testa se os campos estão preenchidos e se o email já existe na base
-            if (pesquisaEmail(editEmail.getText().toString()) == false) {
+            if (!pesquisaEmail(editEmail.getText().toString())) {
                 if (
                         editNome.getText().toString().isEmpty() ||
                                 editEmail.getText().toString().isEmpty() ||
@@ -76,10 +75,7 @@ public class CadastroPessoaActivity extends AppCompatActivity {
                     try {
                     String senha = editSenha.getText().toString();
 
-                    MessageDigest algorithm = null;
-
-                        algorithm = MessageDigest.getInstance("SHA-1");
-
+                    MessageDigest algorithm = MessageDigest.getInstance("SHA-1");
 
                     algorithm.update( senha.getBytes() );
                     byte[] hash = algorithm.digest();
@@ -101,10 +97,6 @@ public class CadastroPessoaActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
-            } else if (id == R.id.home) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
 
             }
 
@@ -134,11 +126,8 @@ public class CadastroPessoaActivity extends AppCompatActivity {
                 }
             });
 
-            if(query == null) {
 
             return false;
-        }else{
-            return false;
-        }
+        
     }
 }

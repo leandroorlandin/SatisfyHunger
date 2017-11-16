@@ -5,8 +5,4 @@
             android:title="Novo"
             android:icon="@drawable/ic_inserir"
             app:showAsAction="always"/>
-        <item android:id="@+id/home"
-            android:title="Home"
-            android:icon="@drawable/ic_home"
-            app:showAsAction="always"/>
     </menu>
