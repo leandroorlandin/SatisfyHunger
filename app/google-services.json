@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "363053823513-bjhlgegc4itnu92sshesmliei969c49v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.leandro.satisfyhunger",
+            "certificate_hash": "a24c5c67488cd03b84e3fed79d7a84fc41cd1d48"
+          }
+        },
+        {
           "client_id": "363053823513-6hoj3s01trc4d48nnug586uit1mqfbd9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

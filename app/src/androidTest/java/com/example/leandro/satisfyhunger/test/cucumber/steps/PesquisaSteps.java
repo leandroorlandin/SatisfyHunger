@@ -35,7 +35,7 @@ public class PesquisaSteps extends ActivityInstrumentationTestCase2<Pesquisa> {
     @Dado("a tela de pesquisa esta ativa")
     public void tela_pesquisa_ativa(){
         assertNotNull(getActivity());
-        onView(withId(R.id.menu_buscar)).perform(click());
+ //       onView(withId(R.id.menu_buscar)).perform(click());
     }
 
     @Entao("serao exibidos resultados")
