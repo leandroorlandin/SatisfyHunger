@@ -6,4 +6,8 @@
         android:title="Home"
         android:icon="@drawable/ic_home"
         app:showAsAction="always"/>
+    <item android:id="@+id/menu_pesquisa"
+        android:title="Pesquisa"
+        android:icon="@drawable/ic_buscar"
+        app:showAsAction="always"/>
 </menu>

@@ -5,4 +5,8 @@
             android:title="Novo"
             android:icon="@drawable/ic_inserir"
             app:showAsAction="always"/>
+    <item android:id="@+id/menu_pesquisa"
+        android:title="Pesquisa"
+        android:icon="@drawable/ic_buscar"
+        app:showAsAction="always"/>
     </menu>
