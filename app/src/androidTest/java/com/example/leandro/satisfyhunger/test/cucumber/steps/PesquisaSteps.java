@@ -5,6 +5,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import com.example.leandro.satisfyhunger.Pesquisa;
 import com.example.leandro.satisfyhunger.R;
 
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
@@ -23,7 +24,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 @CucumberOptions(features = "features")
 public class PesquisaSteps extends ActivityInstrumentationTestCase2<Pesquisa> {
 
-    public PesquisaSteps(Pesquisa pesquisa){
+    public PesquisaSteps(Pesquisa activityClass){
         super(Pesquisa.class);
     }
 
