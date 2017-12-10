@@ -4,7 +4,11 @@ package model;
  * Created by privale on 03/10/17.
  */
 
-public class Vendedor extends Pessoa {
+public class Vendedor {
+    private String id;
+    private String nome;
+    private String telefone;
+    private String status;
     private String local;
     private String produto;
     private String descricao;
@@ -18,6 +22,30 @@ public class Vendedor extends Pessoa {
 
     public void setLocal(String local) {
         this.local = local;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getProduto() {
@@ -36,9 +64,17 @@ public class Vendedor extends Pessoa {
         this.descricao = descricao;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Nome: " + getNome() + "\n" + "Produto: " + produto + "\n" +  "Local: " + getLocal()
-                + "\n" +   "Telefone: " + getTelefone();
+                + "\n" +   "Telefone: " + getTelefone() + "\n" +   "Descrição: " + getDescricao();
     }
 }

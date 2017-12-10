@@ -35,7 +35,7 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".CadastroPessoaActivity"
+            android:name=".CadastroUsuarioActivity"
             android:label="Cadastre-se" /> />
         <activity android:name=".InicialActivity"/>
     </application>

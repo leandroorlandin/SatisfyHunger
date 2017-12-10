@@ -11,23 +11,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.*;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.UUID;
-
-import model.Pessoa;
-
-public class CadastroPessoaActivity extends AppCompatActivity {
+public class CadastroUsuarioActivity extends AppCompatActivity {
 
     private EditText  editEmail, editSenha;
     private FirebaseAuth firebaseAuth;
@@ -36,7 +23,7 @@ public class CadastroPessoaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_pessoa);
+        setContentView(R.layout.activity_cadastro_usuario);
         inicializarComponentes();
 
     }
@@ -68,15 +55,15 @@ public class CadastroPessoaActivity extends AppCompatActivity {
             String senha = editSenha.getText().toString().trim();
            if(validarUsuario(email, senha)){
                criarUsuario(email, senha);
+           }else{
+               alert("E-mail e Senha devem ser preenchidos");
            }
             }
-        
-        return true;
 
+        return super.onOptionsItemSelected(item);
     }
-private boolean validarUsuario(String email, String senha){
+public boolean validarUsuario(String email, String senha){
         if (email.isEmpty()|| senha.isEmpty()){
-            alert("E-mail e Senha devem ser preenchidos");
             return false;
 
         }else{
@@ -86,12 +73,12 @@ private boolean validarUsuario(String email, String senha){
 
     private void criarUsuario(String email, String senha) {
         firebaseAuth.createUserWithEmailAndPassword(email,senha)
-                .addOnCompleteListener(CadastroPessoaActivity.this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(CadastroUsuarioActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             alert("Usuário Cadastrado com Sucesso");
-                            Intent intent = new Intent(CadastroPessoaActivity.this,InicialActivity.class);
+                            Intent intent = new Intent(CadastroUsuarioActivity.this,InicialActivity.class);
                             startActivity(intent);
                             finish();
                         }else{
@@ -101,11 +88,6 @@ private boolean validarUsuario(String email, String senha){
                 });
     }
 
-    private void limparCampos() {
-        editEmail.setText("");
-        editSenha.setText("");
-    }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -113,6 +95,6 @@ private boolean validarUsuario(String email, String senha){
     }
 
     private void alert(String msg){
-        Toast.makeText(CadastroPessoaActivity.this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(CadastroUsuarioActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
 }

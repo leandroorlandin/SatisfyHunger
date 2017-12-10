@@ -2,8 +2,11 @@ package com.example.leandro.satisfyhunger;
 
 import android.support.annotation.NonNull;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by privale on 08/12/2017.
@@ -14,6 +17,7 @@ public class Conexao {
     private static FirebaseAuth firebaseAuth;
     private static FirebaseAuth.AuthStateListener authStateListener;
     private static FirebaseUser firebaseUser;
+
 
     private Conexao(){
 
@@ -45,4 +49,6 @@ public class Conexao {
     public static void logout(){
         firebaseAuth.signOut();;
     }
+
+
 }

@@ -5,7 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.leandro.satisfyhunger.CadastroVendedorActivity">
-
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome"/>
+    <EditText
+        android:id="@+id/editTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Telefone"/>
 
 <EditText
         android:id="@+id/editLocal"
@@ -22,9 +33,10 @@
         android:hint="Produto" />
 
     <EditText
-        android:id="@+id/editDescricao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Descrição" />
+    android:id="@+id/editDescricao"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Descrição" />
 </LinearLayout>
+

@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity  {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),CadastroPessoaActivity.class);
+                Intent intent = new Intent(getApplicationContext(),CadastroUsuarioActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,6 +54,9 @@ public class LoginActivity extends AppCompatActivity  {
                 String senha = editSenha.getText().toString().trim();
                 if (validarUsuario(email,senha)){
                     login(email,senha);
+                }else{
+                    alert("E-mail e Senha devem ser preenchidos");
+
                 }
 
             }
@@ -62,14 +65,13 @@ public class LoginActivity extends AppCompatActivity  {
 
     public boolean validarUsuario(String email, String senha){
         if (email.isEmpty()|| senha.isEmpty()){
-            alert("E-mail e Senha devem ser preenchidos");
             return false;
 
         }else{
             return true;
         }
     }
-    private void inicializarComponentes(){
+    public void inicializarComponentes(){
         editEmail = (EditText) findViewById(R.id.email);
         editSenha = (EditText) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.btnLogin);
