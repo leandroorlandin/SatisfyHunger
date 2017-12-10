@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
     <menu xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-        <item android:id="@+id/menu_novo"
-            android:title="Novo"
-            android:icon="@drawable/ic_inserir"
-            app:showAsAction="always"/>
-    <item android:id="@+id/menu_pesquisa"
+
+    <item android:id="@+id/menu_voltar"
         android:title="Pesquisa"
-        android:icon="@drawable/ic_buscar"
+        android:icon="@drawable/ic_voltar"
         app:showAsAction="always"/>
-    </menu>
+    <item android:id="@+id/menu_salvar"
+        android:title="Novo"
+        android:icon="@drawable/ic_salvar"
+        app:showAsAction="always"/>
+
+</menu>

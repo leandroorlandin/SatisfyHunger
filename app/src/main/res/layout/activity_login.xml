@@ -26,7 +26,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
+                    android:hint="Senha"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/prompt_password"
                     android:imeOptions="actionUnspecified"
@@ -40,7 +40,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold"
-                android:onClick="MkLogar"/>
+                android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnNovo"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Cadastre-se"
+        android:textStyle="bold" />
 
-        </LinearLayout>
+
+</LinearLayout>

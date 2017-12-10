@@ -21,6 +21,16 @@ public class ExampleUnitTest {
         boolean result = p.teste();
 
         assertEquals(true, result);
-
+    
+    }
+    public void testeLoginTrue(){
+        LoginActivity loginActivity = new LoginActivity();
+        boolean resultado = loginActivity.validarUsuario("ps.vale@gmail.com", "123456");
+        assertEquals(true,resultado);
+    }
+    public void testeLoginFalse(){
+        LoginActivity loginActivity = new LoginActivity();
+        boolean resultado = loginActivity.validarUsuario("", "");
+        assertEquals(false,resultado);
     }
 }

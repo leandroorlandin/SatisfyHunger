@@ -26,12 +26,4 @@
         android:text="@string/login"
         android:onClick="MkLogin"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="Cadastre-se"
-        android:onClick="MkCadastro"/>
-
 </LinearLayout>

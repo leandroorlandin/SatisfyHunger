@@ -19,9 +19,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
-    //registrar
-    public void MkCadastro(View view){
-        Intent intent = new Intent(this, CadastroPessoaActivity.class);
-        startActivity(intent);
-    }
 }
