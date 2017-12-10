@@ -63,10 +63,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 public boolean validarUsuario(String email, String senha){
-        if (email.isEmpty()|| senha.isEmpty()){
-            return false;
-
-        }else{
+        if (email.isEmpty()|| senha.isEmpty()) return false;
+        else{
             return true;
         }
 }

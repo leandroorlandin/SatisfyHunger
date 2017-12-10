@@ -8,7 +8,6 @@ public class Vendedor {
     private String id;
     private String nome;
     private String telefone;
-    private String status;
     private String local;
     private String produto;
     private String descricao;
@@ -38,14 +37,6 @@ public class Vendedor {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getProduto() {

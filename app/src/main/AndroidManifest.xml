@@ -36,8 +36,9 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".CadastroUsuarioActivity"
-            android:label="Cadastre-se" /> />
-        <activity android:name=".InicialActivity"/>
+            android:label="Cadastre-se" />
+        />
+        <activity android:name=".InicialActivity" />
     </application>
 
 </manifest>
