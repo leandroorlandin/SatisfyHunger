@@ -14,4 +14,13 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void test(){
+        Pesquisa p = new Pesquisa();
+        boolean result = p.teste();
+
+        assertEquals(true, result);
+
+    }
 }

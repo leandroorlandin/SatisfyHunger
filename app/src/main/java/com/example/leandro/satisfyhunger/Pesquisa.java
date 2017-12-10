@@ -127,4 +127,8 @@ public class Pesquisa extends AppCompatActivity {
         }
         return true;
     }
+
+    public boolean teste(){
+        return true;
+    }
 }
